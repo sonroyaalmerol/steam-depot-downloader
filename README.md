@@ -1,9 +1,9 @@
-[![](https://img.shields.io/codacy/grade/6a8e207cf98246169e633d6f22da9d9c)](https://hub.docker.com/r/sonroyaalmerol/steam-depot-downloader/) [![Docker Pulls](https://img.shields.io/docker/pulls/sonroyaalmerol/steam-depot-downloader.svg)](https://hub.docker.com/r/sonroyaalmerol/steam-depot-downloader/) [![](https://img.shields.io/docker/image-size/sonroyaalmerol/steam-depot-downloader)](https://img.shields.io/docker/image-size/sonroyaalmerol/steam-depot-downloader) [![Bookworm Images](https://github.com/sonroyaalmerol/steam-depot-downloader/actions/workflows/release.yml/badge.svg)](https://github.com/sonroyaalmerol/steam-depot-downloader/actions/workflows/release.yml) [![Bullseye Images](https://github.com/sonroyaalmerol/steam-depot-downloader/actions/workflows/release-bullseye.yml/badge.svg)](https://github.com/sonroyaalmerol/steam-depot-downloader/actions/workflows/release-bullseye.yml) [![Alpine Images](https://github.com/sonroyaalmerol/steam-depot-downloader/actions/workflows/release-alpine.yml/badge.svg)](https://github.com/sonroyaalmerol/steam-depot-downloader/actions/workflows/release-alpine.yml)
+[![](https://img.shields.io/codacy/grade/6a8e207cf98246169e633d6f22da9d9c)](https://hub.docker.com/r/sonroyaalmerol/steam-depot-downloader/) [![Docker Pulls](https://img.shields.io/docker/pulls/sonroyaalmerol/steam-depot-downloader.svg)](https://hub.docker.com/r/sonroyaalmerol/steam-depot-downloader/) [![](https://img.shields.io/docker/image-size/sonroyaalmerol/steam-depot-downloader)](https://img.shields.io/docker/image-size/sonroyaalmerol/steam-depot-downloader) [![Bookworm Images](https://github.com/sonroyaalmerol/steam-depot-downloader/actions/workflows/release.yml/badge.svg)](https://github.com/sonroyaalmerol/steam-depot-downloader/actions/workflows/release.yml) [![Bullseye Images](https://github.com/sonroyaalmerol/steam-depot-downloader/actions/workflows/release-bullseye.yml/badge.svg)](https://github.com/sonroyaalmerol/steam-depot-downloader/actions/workflows/release-bullseye.yml)
 
 # Supported tags and respective `Dockerfile` links
   -	[`debian`, `debian-bookworm`, `latest` (*bookworm/Dockerfile*)](https://github.com/sonroyaalmerol/steam-depot-downloader/blob/master/bookworm/Dockerfile)
   -	[`debian-bullseye` (*bullseye/Dockerfile*)](https://github.com/sonroyaalmerol/steam-depot-downloader/blob/master/bullseye/Dockerfile)
-  -	[`alpine` (*alpine/Dockerfile*)](https://github.com/sonroyaalmerol/steam-depot-downloader/blob/master/alpine/Dockerfile)
+  -	~~`alpine` (*alpine/Dockerfile*)~~
 
 > [!IMPORTANT]
 > Builds are set to execute regularly when a new commit to the Box64 repo or a new version of DepotDownloader has been detected. Use a specific tag with a commit hash if you want to pin a specific release.
@@ -71,5 +71,8 @@ The `steam-depot-downloader` images come in two flavors, each designed for a spe
 ## `steam-depot-downloader:debian`
 This is the defacto image. As the tag describes, this variant has a Debian base image. If you want the best compatibility with servers that require `glibc`, this will be your best friend.<br/>
 
-## `steam-depot-downloader:alpine`
+## ~~`steam-depot-downloader:alpine`~~
+
+**This is not yet available**
+
 This is a variant that has a Alpine base image. I suggest you use this image if your use-case does not necessarily need the libraries that come with Debian and needs a smaller footprint at the same time.
