@@ -111,7 +111,7 @@ RUN set -x \
     && chmod +x DepotDownloader \
     && mv DepotDownloader /usr/local/bin/DepotDownloader
 
-FROM --platform=arm64 debian:bullseye-slim as build_stage_arm64
+FROM --platform=arm64 build_stage_amd64 as build_stage_arm64
 
 COPY --from=box64_m1 /tmp/install/usr/local/bin/box64 /usr/local/bin/box64-m1
 COPY --from=box64_rpi5 /tmp/install/usr/local/bin/box64 /usr/local/bin/box64-rpi5
