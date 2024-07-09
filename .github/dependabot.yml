@@ -6,6 +6,10 @@
 version: 2
 updates:
   - package-ecosystem: "docker" # See documentation for possible values
-    directory: "/" # Location of package manifests
+    directory: "bookworm/" # Location of package manifests
+    schedule:
+      interval: "weekly"
+  - package-ecosystem: "docker" # See documentation for possible values
+    directory: "bullseye/" # Location of package manifests
     schedule:
       interval: "weekly"
