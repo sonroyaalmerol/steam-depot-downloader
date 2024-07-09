@@ -31,6 +31,11 @@ This can prove useful if you are just looking to test a certain game server inst
 
 Running AMD64-based dedicated servers should be as easy as shown below:
 ```
+# <gameserver-start> should be a executable binary, not a bash script.
+# If you really need to execute a bash script, you need to add an x86_64 version of bash
+# inside the container and set the BOX64_BASH env var to its path.
+# See https://github.com/ptitSeb/box64/blob/main/docs/USAGE.md#box64_bash-
+
 /usr/local/bin/box64 <gameserver-start> <gameserver-args>
 ```
 
