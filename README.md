@@ -14,7 +14,7 @@ DepotDownloader utilizes SteamRE's SteamKit2 library to provide an interface sim
 # Why does the image have ARM64 compatibility? I thought Steam dedicated servers are only for AMD64?
 One of the biggest challenges when it comes to running dedicated servers from Steam is steamcmd. Valve ships steamcmd (and steam) as a 32-bit binary. That means, machines that has no 32-bit support (like the M-series Macs) will struggle to run steamcmd reliably even with emulation. Meanwhile, DepotDownloader can be built for any architecture as it is open-source and can pretty much do all we need for dedicated servers.
 
-For the game servers themselves, [Box64](https://github.com/ptitSeb/box64) has come a long way and is in active development to expand its compatibility list. As an example, it can run a [Palworld Dedicated Server](https://github.com/thijsvanloef/palworld-server-docker)! This image has a variety of Box64 binaries included. For tweaking, environment variables could be used for [Box64](https://github.com/ptitSeb/box64/blob/main/docs/USAGE.md).
+For the game servers themselves, [Box64](https://github.com/ptitSeb/box64) has come a long way and is in active development to expand its compatibility list. As an example, it can run a [Palworld Dedicated Server](https://github.com/thijsvanloef/palworld-server-docker)! ARM64 versions of this image has a variety of Box64 binaries included. For tweaking, environment variables could be used for [Box64](https://github.com/ptitSeb/box64/blob/main/docs/USAGE.md).
 
 # How to use this image
 > [!IMPORTANT]
@@ -27,9 +27,19 @@ $ DepotDownloader -app 403240 -dir /home/steam/squad-dedicated
 ```
 This can prove useful if you are just looking to test a certain game server installation.
 
+## Using Box64 to run AMD64-based dedicated servers on ARM64
+
+Running AMD64-based dedicated servers should be as easy as shown below:
+```
+/usr/local/bin/box64 <gameserver-start> <gameserver-args>
+```
+
+Some dedicated servers might require specific libraries to run. Make sure to figure those out and add them within the container. To ensure Box64 includes those libraries, you may specify [`BOX64_LD_LIBRARY_PATH`](https://github.com/ptitSeb/box64/blob/main/docs/USAGE.md#box64_ld_library_path-) as an environment variable.
+
 ## Configuration
 This image includes the `nano` text editor for convenience.
 
+### ARM64-specific configurations
 For better Box64 compatibility, some dedicated servers need specific configurations for stability. The combination listed below might give you the best chance in exchange for performance. You may adjust them as needed. No custom Box64 configurations have been set for this image by default. See [Box64 usage documentation](https://github.com/ptitSeb/box64/blob/main/docs/USAGE.md) for more info.
 
 ```
