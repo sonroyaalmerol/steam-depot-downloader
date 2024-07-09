@@ -96,7 +96,7 @@ RUN set -x \
 		locales \
   		wget \
 		gnupg \
-        libicu72 \
+        libicu67 \
         unzip \
 	&& sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen \
 	&& dpkg-reconfigure --frontend=noninteractive locales \
